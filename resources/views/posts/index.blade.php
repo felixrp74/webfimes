@@ -1,28 +1,28 @@
 <x-app-layout>
     
     <div class="flex justify-center">
-        <h1 class="text-2xl font-bold leading-normal text-gray-800">
+        <h1 class="text-center lg:text-2xl font-bold leading-normal text-gray-800 xs:text-xs">
             UNIVERSIDAD NACIONAL DEL ALTIPLANO PUNO
-          </h1>
+        </h1>
     </div>
 
  
     <div class="flex justify-center">
-        <h1 class="text-2xl font-bold leading-normal text-gray-800">
+        <h1 class="text-center lg:text-2xl font-bold leading-normal text-gray-800 xs:text-xs">
             FACULTAD DE INGENIERIA MECANICA ELECTRICA, ELECTRONICA Y SISTEMAS
           </h1>
     </div>
 
  
     <div class="flex justify-center">
-        <h1 class="text-2xl font-bold leading-normal text-gray-800">
+        <h1 class="text-center lg:text-2xl font-bold leading-normal text-gray-800 xs:text-xs">
             RESPONSABILIDAD SOCIAL
           </h1>
     </div>
 
 
 
-    <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="container my-4 mx-auto px-4 md:px-12">
         <div class="flex flex-wrap -mx-1 lg:-mx-4">
     
             <!-- Column -->
@@ -123,7 +123,7 @@
                     </a>
 
                     <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">ESCUELA PROFESIONAL DE INGENIERIA MECANICA ELECTRICA</div>
+                        <div class="font-bold text-xl mb-2">ESCUELA PROFESIONAL DE INGENIERIA SISTEMAS</div>
                         <p class="text-gray-700 text-base">
                             Manual de NASA define la Ingeniería de Sistemas como la combinación de elementos que funcionan junto s para producir la capacidad de satisfacer una necesidad. Los elementos 
                                     incluyen los equipos, software, plantas industriales, personal, procesos, y procedimientos requeridos para alcanzar dicho propósito.

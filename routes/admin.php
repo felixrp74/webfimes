@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\PostController;
 // no es necesarion poner 'admin' como ruta. 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
+Route::resource('users', UserController::class)->names('admin.users');
+
 Route::resource('categories', CategoryController::class)->names('admin.categories');
 
 Route::resource('users', UserController::class)->names('admin.users');

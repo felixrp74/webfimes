@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -225,23 +225,23 @@ return [
     */
 
     'menu' => [ 
-        [
-            'text' => 'buscar',
-            'search' => true,
-            'topnav' => true,
-        ],
+        // [
+        //     'text' => 'buscar',
+        //     'search' => true,
+        //     'topnav' => true,
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'Publicaciones',
-            'url'         => '/',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+        // [
+        //     'text'        => 'Publicaciones',
+        //     'url'         => '/',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
         
         // [
         //     'text'    => 'multilevel',
@@ -282,32 +282,44 @@ return [
         //     ],
         // ],
         ['header' => 'OPCIONES DE SISTEMA'],
+        ['header' => 'PUBLICACION'],
         [
             'text'      => 'Lista de post',
             'icon'      => 'fas fa-fw fa-clipboard',
             'route'     => 'admin.posts.index',
+            'can'       => 'admin.posts.index',
         ],
         [
             'text'      => 'Crear post',
             'icon'      => 'fas fa-fw fa-file',
             'route'     => 'admin.posts.create',
+            'can'       => 'admin.posts.create',
         ],
         // [
         //     'text'       => 'information',
         //     'icon_color' => 'cyan',
         //     'url'        => '#',
         // ],
-        ['header' => 'Administrador'],
+        ['header' => 'ADMINISTRACION'],
         [
-            'text' => 'categorias',
+            'text' => 'Escuela',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
+            'can' => 'admin.categories.index',
         ],
+        // [
+        //     'text' => 'Usuario',
+        //     'route'  => 'admin.users.index',
+        //     // 'icon' => 'fab fa-fw fa-buffer',
+        //     'icon' => 'fas fa-user-check',
+            
+        // ],
         [
-            'text' => 'usuarios',
+            'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             // 'icon' => 'fab fa-fw fa-buffer',
-            'icon' => 'fas fa-user-check',
+            'icon' => 'fas fa-users fa-fw',
+            'can' => 'admin.users.index',
             
         ],
         [

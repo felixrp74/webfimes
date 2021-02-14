@@ -1,5 +1,5 @@
 <div class="card">
-    {{-- {{$search}} --}}
+    {{-- buscador --}}
     <div class="card-header">
         <input wire:model = "search" class="form-control" placeholder="ingrese el post / evento" type="text">
     </div>

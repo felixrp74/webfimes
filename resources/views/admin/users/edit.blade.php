@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>EDIT USUARIO</h1>
+    <h1>EDITAR USUARIO</h1>
 @stop
 
 @section('content')
@@ -52,6 +52,15 @@
                 <input type="radio" id="ingenieria-sistemas" name="escuela" value="{{ __('ingenieria-sistemas') }}">
                 <label for="ingenieria-sistemas">INGENIERIA SISTEMAS</label>
             </div>
+
+            @foreach ($roles as $role)
+                <div class="form-control">
+                    <label for="">
+                        {!! Form::checkbox('roles[]',$role->id, null, ['class' => 'mr-1']) !!}
+                        {{$role->name}}
+                    </label>
+                </div>
+            @endforeach
 
             <div class="form-group">
                 {!! Form::label('password', 'password') !!}

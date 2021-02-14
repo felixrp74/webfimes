@@ -57,7 +57,8 @@
             </div>
           </div>
         </div>
- 
+        
+        
         @auth        
         
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -70,13 +71,15 @@
               </svg>
             </button> --}}
 
+            
+            
             <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onclick="event.preventDefault();
-                this.closest('form').submit();">cerrar sesion</a> 
+              @csrf
+              <a href="{{ route('logout') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" role="menuitem" onclick="event.preventDefault();
+                this.closest('form').submit();">Cerrar sesion</a> 
             </form>
-    
-            <!-- Profile dropdown -->
+            
+            <!-- perfil dropdown -->
             <div class="ml-3 relative" x-data="{ open: false }">
               <div>
                 <button x-on:click="open = true" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
@@ -112,6 +115,7 @@
         @else
  
           <a href="{{route('login')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">iniciar sesion</a>
+          <a href="{{route('responsable.inicio')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" role="menuitem">Responsables</a>
           {{-- <a href="{{route('register')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Registrar</a> --}}
         @endauth
 

@@ -3,10 +3,17 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>CREATE USUARIO</h1>
+    <h1>CREAR USUARIO</h1>
 @stop
 
 @section('content')
+
+    @if (session('info'))
+        <div class="alert alert-danger">
+            <strong>{{session('info')}}</strong>
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.users.store']) !!}
@@ -45,6 +52,16 @@
                     <input type="radio" id="ingenieria-sistemas" name="escuela" value="{{ __('ingenieria-sistemas') }}">
                     <label for="ingenieria-sistemas">INGENIERIA SISTEMAS</label>
                 </div>
+                
+                @foreach ($roles as $role)
+                    <div class="form-group">
+                        <label for="">
+                            {!! Form::checkbox('roles[]',$role->id, null, ['class' => 'mr-1']) !!}
+                            {{$role->name}}
+                        </label>
+                    </div>
+                @endforeach
+
                 <div class="form-group">
                     {!! Form::label('password', 'password') !!}
                     {!! Form::password('password',null, ['class' => 'form-control', 'placeholder' => 'ingresa password']) !!}

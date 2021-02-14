@@ -4,10 +4,12 @@
         <div class="flex bg-white shadow-2xl rounded-lg">
         @if ( $category->slug == 'ingenieria-mecanica' )
             <div class="lg:flex-1 md:flex-shrink-0">
-                {{-- <div class="justify-content md:flex-shrink-0"> --}}
-                <a href="#">
+                
+                {{-- logo --}}
+                <a class="flex justify-center" href="#">
                     <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" src="https://img.webme.com/pic/l/larios-unap/mecanica.png" alt="Man looking at item at a store">
                 </a>
+                
             </div>
             <div class="lg:flex-1 p-8">
                 <a href="#" class="uppercase tracking-wide text-3xl text-indigo-500 font-semibold">ESCUELA PROFESIONAL DE INGENIERIA MECANICA ELECTRICA</a>
@@ -17,8 +19,9 @@
 
         @elseif( $category->slug == 'ingenieria-electronica' )
             <div class="lg:flex-1 md:flex-shrink-0">
-                {{-- <div class="justify-content md:flex-shrink-0"> --}}
-                <a href="#">
+                
+                {{-- logo --}}
+                <a class="flex justify-center" href="#">
                     <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" src="https://portal.unap.edu.pe/sites/default/files/epie.jpg" alt="Man looking at item at a store">
                 </a>
             </div>
@@ -30,10 +33,12 @@
 
             @elseif( $category->slug == 'ingenieria-sistemas' )
                 <div class="lg:flex-1 md:flex-shrink-0">
-                    {{-- <div class="justify-content md:flex-shrink-0"> --}}
-                    <a href="#">
+                    
+                    {{-- logo --}}
+                    <a class="flex justify-center" href="#">
                         <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" src="https://pbs.twimg.com/profile_images/2137261758/episunap_400x400.png" alt="Man looking at item at a store">
                     </a>
+
                 </div>
                 <div class="lg:flex-1 p-8">
                     <a href="#" class="uppercase tracking-wide text-3xl text-indigo-500 font-semibold">ESCUELA PROFESIONAL DE INGENIERIA SISTEMAS</a>
@@ -45,10 +50,12 @@
 
             @elseif( $category->slug == 'general' )
                 <div class="lg:flex-1 md:flex-shrink-0">
-                    {{-- <div class="justify-content md:flex-shrink-0"> --}}
-                    <a href="#">
+                    
+                    {{-- logo --}}
+                    <a class="flex justify-center" href="#">
                         <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Logo_UNAP.png" alt="Man looking at item at a store">
                     </a>
+                    
                 </div>
                 <div class="lg:flex-1 p-8">
                     <a href="#" class="uppercase tracking-wide text-3xl text-indigo-500 font-semibold">general</a>

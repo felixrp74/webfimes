@@ -4,7 +4,7 @@
 
 @section('content_header')
     <a class="btn btn-info float-right" href="{{route('admin.posts.create')}}">Crear Publicacion</a>    
-    <h1>Lista de  PUBLICACION</h1>
+    <h1>LISTA PUBLICACION</h1>
 
 @stop
 

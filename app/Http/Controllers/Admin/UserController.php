@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -18,9 +19,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        // $users = User::all()->orderBy('id', 'DESC')->get();
-        return view('admin.users.index', compact('users'));
+        // $users = User::all();
+        // $users = User::all()->orderBy('id', 'ASC')->get();
+        // return view('admin.users.index', compact('users'));
+        return view('admin.users.index');
     }
 
     /**
@@ -30,7 +32,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        
+        $roles = Role::all();        
+        return view('admin.users.create', compact('roles'));
+        // return view('admin.users.create');
     }
 
     /**
@@ -47,11 +52,14 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'escuela' => 'required',
             'password' => 'required',
+            'roles' => 'required',
         ]);
         
         if($validador->fails())
         {
-            return response()->json(['status_code' => 400, 'message' => 'completa los campos']);
+            // return response()->json(['status_code' => 400, 'message' => 'completa los campos']);
+            // return redirect()->with('info' , 'completa los campos .');
+            return redirect()->route('admin.users.create')->with('info' , 'completa los campos');
         }
  
         $user = new User();
@@ -59,6 +67,8 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make( $request->password );
         $user->escuela = $request->escuela;
+
+        $user->roles($request->roles); // linea modo prueba
  
         $user->save();
 
@@ -86,7 +96,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        $roles = Role::all();        
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -99,26 +110,38 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
 
-        $validador = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required',
-            'escuela' => 'required',
-            'password' => 'required',
-        ]);
+        // $validador = Validator::make($request->all(), [
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'escuela' => 'required',
+        //     'password' => 'required',
+            
+        // ]);
         
-        if($validador->fails())
-        {
-            return response()->json(['status_code' => 400, 'message' => 'Mala peticion']);
-        } 
+        // if($validador->fails())
+        // {
+            // return response()->json(['status_code' => 400, 'message' => 'Mala peticion']);
+            // return $this->edit($user)->with('info', 'Completa todos los ca'); // esta linea estamodo prueba
+        // } 
          
+        
+        if ($request->password != null) {
+            # code...
+            $user->password = Hash::make( $request->password );
+        }
+        if ($request->escuela != null){
+            $user->escuela = $request->escuela;
+
+        }
+        
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make( $request->password );
-        $user->escuela = $request->escuela;
+        $user->roles()->sync($request->roles); // linea modo prueba
          
         $user->update(); 
 
-        return redirect()->route('admin.users.edit', $user)->with('info' , 'Actualizado exito');
+        // return redirect()->route('admin.users.edit', $user)->with('info' , 'Actualizado exito');
+        return $this->index()->with('info' , 'Actualizado exito');
     }
 
     /**

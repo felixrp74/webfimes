@@ -34,7 +34,7 @@
             <article class="overflow-hidden rounded-lg shadow-2xl bg-white">
                 <a class="flex justify-center" href="#">
                     <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" alt="Placeholder" class="block h-auto w-full"
-                     src="https://img1.freepng.es/20171220/xxq/question-mark-png-5a3a530b302187.6463118015137717871972.jpg">
+                     src="http://directorio.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=49867&ruta=/documents/docInvestigadores/49867/imagenes/WhatsApp%20Image%202020-01-10%20at%202.02.41%20PM.jpeg&content_type=image/jpeg">
                      
                 </a>
 
@@ -82,9 +82,10 @@
             <article class="overflow-hidden rounded-lg shadow-2xl bg-white">
                 <a class="flex justify-center" href="#">
                     <img class="h-60 w-full object-scale-down md:w-48 mx-4 p-4" alt="Placeholder" class="block h-auto w-full" 
-                    src="https://img1.freepng.es/20171220/xxq/question-mark-png-5a3a530b302187.6463118015137717871972.jpg">
+                    src="http://directorio.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=37938&ruta=/documents/docInvestigadores/37938/imagenes/eeww.jpg&content_type=image/jpeg">
                 </a>
 
+                
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">ESCUELA PROFESIONAL DE INGENIERIA ELECTRONICA</div>
                     <p class="text-gray-700 text-base font-bold">
